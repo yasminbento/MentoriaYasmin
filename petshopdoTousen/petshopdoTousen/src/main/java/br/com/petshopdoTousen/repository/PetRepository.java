@@ -12,10 +12,9 @@ public class PetRepository {
     List<Pet> listaPet = new ArrayList<>();
 
 
+    public Pet persistenciaListaPet(Pet persistPet) {
 
-    public Pet persistenciaListaPet (Pet persistPet) {
-
-       this.listaPet.add(persistPet);
+        this.listaPet.add(persistPet);
 
         return persistPet;
 
@@ -24,5 +23,14 @@ public class PetRepository {
     public List<Pet> buscaTodosPets() {
 
         return listaPet;
+    }
+
+    public Pet buscaPetPorID(Long id) {
+
+        for (Pet p : listaPet) {
+            if (p.getId() == id)
+                return p;
+        }
+        return null;
     }
 }

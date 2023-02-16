@@ -21,4 +21,8 @@ public class PetService {
     public List<Pet> buscaTodosPets() {
         return petRepository.buscaTodosPets();
     }
+
+    public Pet buscaPetPorID (Long id) {
+        return petRepository.buscaPetPorID(id);
+    }
 }
