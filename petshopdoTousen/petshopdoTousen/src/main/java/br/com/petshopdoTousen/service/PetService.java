@@ -5,6 +5,8 @@ import br.com.petshopdoTousen.repository.PetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PetService {
 
@@ -12,7 +14,11 @@ public class PetService {
     private PetRepository petRepository;
 
     public Pet salvaPet (Pet petRequest) {
+
         return petRepository.persistenciaListaPet(petRequest);
     }
 
+    public List<Pet> buscaTodosPets() {
+        return petRepository.buscaTodosPets();
+    }
 }

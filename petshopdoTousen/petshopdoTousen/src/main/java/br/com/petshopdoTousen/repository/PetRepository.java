@@ -12,11 +12,17 @@ public class PetRepository {
     List<Pet> listaPet = new ArrayList<>();
 
 
+
     public Pet persistenciaListaPet (Pet persistPet) {
 
-        listaPet.add(persistPet);
+       this.listaPet.add(persistPet);
 
         return persistPet;
 
+    }
+
+    public List<Pet> buscaTodosPets() {
+
+        return listaPet;
     }
 }
